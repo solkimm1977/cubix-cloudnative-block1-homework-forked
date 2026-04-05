@@ -36,6 +36,6 @@ jobs:
     - name: docker push
       run: docker push ghcr.io/solkimm1977/cubix/1/homework/app:springboot
     - name: verify image
-      run: ./verify-image
+      run: ./verify-image.sh
 
 
