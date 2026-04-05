@@ -29,4 +29,13 @@ jobs:
       run: java -version
     - name: Build with Maven
       run: ./mvnw package
+    - name: docker login
+      run : docker login ghcr.io -u solkimm1977-p ${{ github.token }}
+    - name: docker image
+      run : docker build . -t ghcr.io/solkimm1977/cubix/1/homework/app:springboot
+    - name: docker push
+      run : docker push ghcr.io/solkimm1977/cubix/1/homework/app:springboot
+    - name: verify image
+      run : ./verify-image
+
 
