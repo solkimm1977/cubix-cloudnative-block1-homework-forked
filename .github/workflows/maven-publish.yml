@@ -65,5 +65,6 @@ jobs:
       contents: read
       packages: write
     steps:  
+    - uses: actions/checkout@v4
     - name: verify image
       run: ./verify-image.sh
