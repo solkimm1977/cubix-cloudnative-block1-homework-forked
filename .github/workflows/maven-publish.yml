@@ -56,7 +56,14 @@ jobs:
       run: docker build . -t ghcr.io/solkimm1977/cubix/1/homework/app:springboot
     - name: docker push
       run: docker push ghcr.io/solkimm1977/cubix/1/homework/app:springboot
+
+
+  verify:
+    runs-on: ubuntu-latest
+    needs: docker
+    permissions:
+      contents: read
+      packages: write
+    steps:  
     - name: verify image
       run: ./verify-image.sh
-
-
